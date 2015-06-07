@@ -1,0 +1,24 @@
+ext {
+    scalaMajorVersion = '2.11'
+    scalaVersion = "$scalaMajorVersion.6"
+}
+
+apply plugin: 'java'
+apply plugin: 'scala'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    runtime "org.scala-lang:scala-compiler:$scalaVersion"
+    compile "org.scala-lang:scala-library:$scalaVersion"
+
+    compile "org.scalafx:scalafx_$scalaMajorVersion:8.0.40-R8"
+    compile "com.typesafe:config:1.2.1"
+
+    testCompile "org.scalatest:scalatest_$scalaMajorVersion:2.2.2"
+    testCompile "org.scalamock:scalamock-scalatest-support_$scalaMajorVersion:3.2.1"
+}
